@@ -4,6 +4,7 @@ import (
 	"echo/router"
 	"github.com/labstack/echo"
 	"github.com/labstack/gommon/log"
+	. "echo/conf"
 )
 
 func main() {
@@ -14,5 +15,5 @@ func main() {
 
 	router.StartRoutes(e)
 
-	e.Logger.Fatal(e.Start(":8801"))
+	e.Logger.Fatal(e.Start(Conf.Server.Addr))
 }

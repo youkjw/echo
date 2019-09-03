@@ -16,7 +16,7 @@ version = "0.0.1"
 
 [server]
 graceful = true
-addr = ":8080"
+addr = ":8081"
 
 # Domains
 domain_api = "localhost"
@@ -24,12 +24,12 @@ domain_web = "localhost"
 domain_socket = "localhost"
 
 [database]
-name = "goweb_db"
-user_name = "goweb_dba"
-pwd  = "123456"
+name = "echo"
+user_name = "root"
+pwd  = "12345678"
 host = "127.0.0.1"
 port = "3306"
 
 [redis]
 server = "127.0.0.1:6379"
-pwd = "123456"
+pwd = ""
