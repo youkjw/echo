@@ -1,11 +1,10 @@
 package orm
 
 import (
+	. "echo/conf"
 	"echo/module/log"
-	"github.com/hb-go/echo-web/model/orm"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	. "echo/conf"
 )
 
 var db *gorm.DB
@@ -22,7 +21,7 @@ func DB() *gorm.DB {
 		newDb.DB().SetMaxIdleConns(10)
 		newDb.DB().SetMaxOpenConns(100)
 
-		newDb.SetLogger(orm.Logger{})
+		newDb.SetLogger(gorm.Logger{})
 		newDb.LogMode(true)
 		db = newDb
 	}
@@ -31,8 +30,8 @@ func DB() *gorm.DB {
 }
 
 func connect() (*gorm.DB, error){
-	conntction := Conf.DB.UserName + ":" + Conf.DB.Pwd + "@/(" + Conf.DB.Host + ")" + Conf.DB.DatabaseName + "?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open("mysql", conntction)
+	connection := Conf.DB.UserName + ":" + Conf.DB.Pwd + "@(" + Conf.DB.Host + ":" + Conf.DB.Port + ")/" + Conf.DB.DatabaseName + "?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open("mysql", connection)
 
 	if err != nil {
 		return nil, err
