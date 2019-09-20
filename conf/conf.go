@@ -51,6 +51,7 @@ type database struct {
 	UserName string `toml:"user_name"`
 	Pwd      string `toml:"pwd"`
 	Host     string `toml:"host"`
+	DatabaseName string `toml:"db_name"`
 	Port     string `toml:"port"`
 }
 

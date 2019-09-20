@@ -8,3 +8,5 @@ import:
   version: v0.3.0
   subpackages:
   - log
+- package: github.com/jinzhu/gorm
+  version: v1.9.10
