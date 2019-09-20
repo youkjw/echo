@@ -27,7 +27,7 @@ domain_socket = "localhost"
 name = "echo"
 user_name = "root"
 pwd  = "12345678"
-host = "127.0.0.1"
+host = "10.1.30.98"
 port = "3306"
 
 [redis]

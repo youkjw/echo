@@ -35,11 +35,11 @@ func StartRoutes(e *echo.Echo) {
 		log.Panic(err)
 	}
 
-	hosts := InitRoutes()
-
-	e.GET("/users/:id", func(c echo.Context) error {
-		return c.String(http.StatusOK, "/users/:id")
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "hello echo!")
 	})
+
+	hosts := InitRoutes()
 
 	e.Any("/*", func(c echo.Context) (err error) {
 
