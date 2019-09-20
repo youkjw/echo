@@ -10,8 +10,11 @@ func Routers() *echo.Echo {
 
 	e.Logger.SetPrefix("web")
 
-	// Routers
+	// HomeRouters
 	e.GET("/home", handler(HomeHandler))
+
+	// indexRouters
+	e.GET("/index", handler(IndexHandler))
 
 	return e
 }

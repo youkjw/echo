@@ -6,5 +6,5 @@ import (
 )
 
 func HomeHandler(c *echo.Context) error{
-	return (*c).String(http.StatusOK, "hello word!")
+	return (*c).String(http.StatusOK, "hello home!")
 }
