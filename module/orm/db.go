@@ -21,7 +21,7 @@ func DB() *gorm.DB {
 		newDb.DB().SetMaxIdleConns(10)
 		newDb.DB().SetMaxOpenConns(100)
 
-		newDb.SetLogger(gorm.Logger{})
+		//newDb.SetLogger(gorm.Logger{})
 		newDb.LogMode(true)
 		db = newDb
 	}
@@ -30,6 +30,7 @@ func DB() *gorm.DB {
 }
 
 func connect() (*gorm.DB, error){
+	var err error
 	connection := Conf.DB.UserName + ":" + Conf.DB.Pwd + "@(" + Conf.DB.Host + ":" + Conf.DB.Port + ")/" + Conf.DB.DatabaseName + "?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open("mysql", connection)
 

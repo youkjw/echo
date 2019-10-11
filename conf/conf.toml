@@ -26,7 +26,7 @@ domain_socket = "localhost"
 [database]
 name = "echo"
 user_name = "root"
-db_name  = "yd_wb_tmp"
+db_name  = "test"
 pwd  = "12345678"
 host = "10.1.30.98"
 port = "3306"

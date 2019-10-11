@@ -1,34 +1,31 @@
 package model
 
 import (
-	"time"
-	. "echo/module/orm"
 	"echo/module/log"
+	. "echo/module/orm"
+	"fmt"
 )
 
-func (b *Banner) GetBannerList() *Banner {
-	banner := Banner{}
+type Banner struct {
+	Id   int    `gorm:"PRIMARY_KEY;AUTO_INCREMENT"`
+	Name string `gorm:"column:name"`
+}
 
-	if err := DB().Take(&banner).Error; err != nil {
+func (b *Banner) GetBannerList() *Banner {
+	var banners Banner
+
+	DB().First(&banners, 1)
+	fmt.Println(banners)
+
+	if err := DB().First(&banners, 1).Error; err != nil {
 		log.Debugf("Get banner error: %v", err)
-		return &banner
+		return &banners
 	}
 
-	return &banner
+	return &banners
 }
 
-type Banner struct {
-	Id          uint64    `gorm:"AUTO_INCREMENT"`
-	Banner      string    `gorm:"column:banner"`
-	Link        string    `gorm:"column:link"`
-	Status      uint64    `gorm:"column:status"`
-	CreatedTime uint64    `gorm:"column:created_time"`
-	Type        time.Time `gorm:"column:type"`
-	Desc        time.Time `gorm:"column:desc"`
-	Sort        time.Time `gorm:"column:sort"`
-	Popup       time.Time `gorm:"column:popup"`
-}
-
+// set User's table name to be `profiles`
 func (b Banner) TableName() string {
-	return "yi_banner"
+	return "banner"
 }
