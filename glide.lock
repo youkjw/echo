@@ -1,10 +1,15 @@
-hash: 8aee6fd89485ad7728c8bf20e68ba38d0d74a1de60c74f86c9fef674b45a9fa0
-updated: 2019-09-20T17:02:27.986121+08:00
+hash: d4f83f8717051460e412b67b8bdc4c74ea319a7a911eb1abce81299d54afb85e
+updated: 2019-10-12T16:21:48.416003+08:00
 imports:
 - name: github.com/BurntSushi/toml
   version: 3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005
 - name: github.com/go-sql-driver/mysql
   version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/gomodule/redigo
+  version: 9c11da706d9b7902c6da69c592f75637793fe121
+  subpackages:
+  - internal
+  - redis
 - name: github.com/jinzhu/gorm
   version: 836fb2c19d84dac7b0272958dfb9af7cf0d0ade4
   subpackages:
@@ -47,7 +52,7 @@ imports:
   - unicode/bidi
   - unicode/norm
 - name: google.golang.org/appengine
-  version: c71d63e301d75423acb410203c747cad31e9a5e7
+  version: 971852bfffca25b069c31162ae8f247a3dba083b
   subpackages:
   - cloudsql
 testImports: []
