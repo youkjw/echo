@@ -78,3 +78,7 @@ func Panic(i ...interface{}) {
 func Panicf(format string, args ...interface{}) {
 	global.Panicf(format, args)
 }
+
+func(logger Logger) Print(i ...interface{}) {
+	global.Info(i)
+}
