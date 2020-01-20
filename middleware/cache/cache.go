@@ -28,3 +28,4 @@ type CacheStore interface {
 	Decrement(key string, data uint64) (uint64, error)
 	Flush() error
 }
+

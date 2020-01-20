@@ -96,3 +96,17 @@ func InitConfig(configFile string) error {
 
 	return nil
 }
+
+const (
+	// File
+	FILE = "FILE"
+
+	// Redis
+	REDIS = "REDIS"
+
+	// Memcached
+	MEMCACHED = "MEMCACHED"
+
+	// Cookie
+	COOKIE = "COOKIE"
+)
